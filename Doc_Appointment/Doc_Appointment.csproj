@@ -126,6 +126,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Front_end\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
