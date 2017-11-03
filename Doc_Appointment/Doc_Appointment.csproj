@@ -83,13 +83,16 @@
   <ItemGroup>
     <Content Include="Angular_Module\appointmets_mod.js" />
     <Content Include="Angular_Module\app_test_mod.js" />
+    <Content Include="Angular_Module\schedule_mod.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\home_header.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Front_end\appointments.html" />
     <Content Include="Front_end\home.html" />
+    <Content Include="Front_end\schedule.html" />
     <Content Include="Global.asax" />
     <Content Include="Img\WhatsApp Image 2017-11-02 at 2.06.48 PM.jpeg" />
     <Content Include="Scripts\angular-mocks.js" />
