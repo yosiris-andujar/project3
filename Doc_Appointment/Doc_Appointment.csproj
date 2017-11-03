@@ -93,8 +93,15 @@
     <Content Include="Front_end\appointments.html" />
     <Content Include="Front_end\home.html" />
     <Content Include="Front_end\schedule.html" />
+    <Content Include="fullcalendar.css" />
+    <Content Include="fullcalendar.html" />
+    <Content Include="fullcalendar.js" />
+    <Content Include="fullcalendar.print.css" />
     <Content Include="Global.asax" />
     <Content Include="Img\WhatsApp Image 2017-11-02 at 2.06.48 PM.jpeg" />
+    <Content Include="jquery\jquery-1.10.2.js" />
+    <Content Include="jquery\jquery-ui.custom.min.js" />
+    <Content Include="MonthlyHtml.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -109,6 +116,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include=".DS_Store" />
+    <Content Include="jquery\.DS_Store" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
