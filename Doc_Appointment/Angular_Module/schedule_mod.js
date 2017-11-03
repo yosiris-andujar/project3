@@ -26,7 +26,7 @@ ScheduleService.factory('ScheduleApi', function ($http) {
         });
         return request;
     };
-
+    //Verificar al juntarlo con el app_test_mod
     ScheduleApi.editSchedule = function (editSchedule) {
 
         var request = $http({

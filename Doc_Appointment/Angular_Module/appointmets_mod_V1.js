@@ -59,7 +59,7 @@
                 return $http.get(urlBase + '/' + id + '/appointments');
             };
         }])
-        .controller("callPatients", ['$scope', 'dataFactory',
+        .controller("callAppointments", ['$scope', 'dataFactory',
             function ($scope, dataFactory) {
                 $scope.status;
                 $scope.patients;
@@ -67,7 +67,7 @@
 
                 //  getPatients();
 
-                $scope.getPatients = function (role) {
+                $scope.getAppointments = function (role) {
                     dataFactory.getAppointments(role)
                         .then(function (response) {
                             $scope.appointments = response.data;
@@ -111,14 +111,14 @@
                         });
                 };
 
-                $scope.deletePatient = function (id) {
-                    dataFactory.deletePatient(id)
+                $scope.deleteAppointment = function (id) {
+                    dataFactory.deleteAppointment(id)
                         .then(function (response) {
                             $scope.status = 'Deleted Appointment! Refreshing appointment list.';
-                            for (var i = 0; i < $scope.patients.length; i++) {
-                                var cust = $scope.patients[i];
+                            for (var i = 0; i < $scope.appointments.length; i++) {
+                                var cust = $scope.appointments[i];
                                 if (cust.ID === id) {
-                                    $scope.patients.splice(i, 1);
+                                    $scope.appointments.splice(i, 1);
                                     break;
                                 }
                             }

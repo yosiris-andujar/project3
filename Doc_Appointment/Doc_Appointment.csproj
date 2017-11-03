@@ -81,7 +81,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Angular_Module\appointmets_mod.js" />
+    <Content Include="Angular_Module\appointment_mod.js" />
+    <Content Include="Angular_Module\appointmets_mod_V1.js" />
     <Content Include="Angular_Module\app_test_mod.js" />
     <Content Include="Angular_Module\schedule_mod.js" />
     <Content Include="Content\bootstrap-theme.css" />
