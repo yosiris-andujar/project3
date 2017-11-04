@@ -125,50 +125,72 @@
                     },
 
                     events: [
-                        {
-                            title: 'All Day Event',
-                            start: new Date(y, m, 1)
-                        },
+                        //{
+                        //    title: 'Appointment',
+                        //    start: new Date(y, m, 1)
+                        //},
                         {
                             id: 999,
-                            title: 'Repeating Event',
-                            start: new Date(y, m, d - 3, 16, 0),
+                            title: 'Appointment',
+                            start: new Date(y, m, 1, 12, 0),
+                            end: new Date(y, m, 1, 12, 30),
                             allDay: false,
                             className: 'info'
                         },
                         {
-                            id: 999,
-                            title: 'Repeating Event',
-                            start: new Date(y, m, d + 4, 16, 0),
+                            title: 'Appointment2',
+                            start: new Date(y, m, 3, 14, 0),
+                            end: new Date(y, m, 3, 14, 30),
                             allDay: false,
                             className: 'info'
                         },
                         {
-                            title: 'Meeting',
-                            start: new Date(y, m, d, 10, 30),
+                            title: 'Appointment3',
+                            start: new Date(y, m, 4, 16, 0),
+                            end: new Date(y, m, 4, 16, 30),
                             allDay: false,
-                            className: 'important'
+                            className: 'info'
                         },
                         {
-                            title: 'Lunch',
-                            start: new Date(y, m, d, 12, 0),
-                            end: new Date(y, m, d, 14, 0),
+                            title: 'Appointment4',
+                            start: new Date(y, m, 5, 12, 0),
+                            end: new Date(y, m, 5, 12, 30),
                             allDay: false,
-                            className: 'important'
-                        },
-                        {
-                            title: 'Birthday Party',
-                            start: new Date(y, m, d + 1, 19, 0),
-                            end: new Date(y, m, d + 1, 22, 30),
-                            allDay: false,
-                        },
-                        {
-                            title: 'Click for Google',
-                            start: new Date(y, m, 28),
-                            end: new Date(y, m, 29),
-                            url: 'http://google.com/',
-                            className: 'success'
+                            className: 'info'
                         }
+                        //{
+                        //    id: 999,
+                        //    title: 'Repeating Event',
+                        //    start: new Date(y, m, d + 4, 16, 0),
+                        //    allDay: false,
+                        //    className: 'info'
+                        //},
+                        //{
+                        //    title: 'Meeting',
+                        //    start: new Date(y, m, d, 10, 30),
+                        //    allDay: false,
+                        //    className: 'important'
+                        //},
+                        //{
+                        //    title: 'Lunch',
+                        //    start: new Date(y, m, d, 12, 0),
+                        //    end: new Date(y, m, d, 14, 0),
+                        //    allDay: false,
+                        //    className: 'important'
+                        //},
+                        //{
+                        //    title: 'Birthday Party',
+                        //    start: new Date(y, m, d + 1, 19, 0),
+                        //    end: new Date(y, m, d + 1, 22, 30),
+                        //    allDay: false,
+                        //},
+                        //{
+                        //    title: 'Click for Google',
+                        //    start: new Date(y, m, 28),
+                        //    end: new Date(y, m, 29),
+                        //    url: 'http://google.com/',
+                        //    className: 'success'
+                        //}
                     ],
                 });
             });
@@ -176,6 +198,60 @@
 
     </script>
     <style>
+        .jumbotron {
+            background-color: #628395;
+            color: #ffffff;
+        }
+
+        img {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+
+        body {
+            margin: 0;
+        }
+
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #ffad33;
+        }
+
+            ul.topnav li {
+                float: left;
+            }
+
+                ul.topnav li a {
+                    display: block;
+                    color: black;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+
+                    ul.topnav li a:hover:not(.active) {
+                        background-color: #ffffff;
+                    }
+
+                    ul.topnav li a.active {
+                        background-color: #a4a1a1;
+                    }
+
+                ul.topnav li.right {
+                    float: right;
+                }
+
+        @media screen and (max-width: 600px) {
+            ul.topnav li.right,
+            ul.topnav li {
+                float: none;
+            }
+        }
         body {
             margin-top: 40px;
             text-align: center;
@@ -233,6 +309,20 @@
     </style>
 </head>
 <body ng-app="calendarApp" ng-controller="calendarCtrl">
+
+    <ul class="topnav">
+        <li><a href="http://localhost:50544/home.html"><b>Home</b></a></li>
+        <li><a href="http://localhost:50544/dailyscheduler.html"><b>Schedule</b></a></li>
+        <li><a class="active" href="http://localhost:50544/fullcalendar.html"><b>Appointments</b></a></li>
+        <li><a href="#contact"><b>Contact</b></a></li>
+    </ul>
+
+    <div class="jumbotron text-center">
+        <h1>Doc Patient Managment</h1>
+        <h3><b>Dr. Firts Name Last Name, Specialization.</b></h3>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    </div>
+
     <div id='wrap'>
 
         <div id='calendar'></div>

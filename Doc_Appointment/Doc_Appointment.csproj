@@ -89,6 +89,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\home_header.css" />
+    <Content Include="DailyScheduler.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Front_end\appointments.html" />
     <Content Include="Front_end\home.html" />
@@ -98,6 +99,7 @@
     <Content Include="fullcalendar.js" />
     <Content Include="fullcalendar.print.css" />
     <Content Include="Global.asax" />
+    <Content Include="home.html" />
     <Content Include="Img\WhatsApp Image 2017-11-02 at 2.06.48 PM.jpeg" />
     <Content Include="jquery\jquery-1.10.2.js" />
     <Content Include="jquery\jquery-ui.custom.min.js" />

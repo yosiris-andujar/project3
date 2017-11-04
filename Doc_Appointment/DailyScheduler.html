@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Doc Appointment Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="Scripts/angular.js"></script>
+    <style>
+        .jumbotron {
+            background-color: #628395;
+            color: #ffffff;
+        }
+
+        img {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+
+        body {
+            margin: 0;
+            text-align: center;
+        }
+
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #ffad33;
+        }
+
+            ul.topnav li {
+                float: left;
+            }
+
+                ul.topnav li a {
+                    display: block;
+                    color: black;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+
+                    ul.topnav li a:hover:not(.active) {
+                        background-color: #ffffff;
+                    }
+
+                    ul.topnav li a.active {
+                        background-color: #a4a1a1;
+                    }
+
+                ul.topnav li.right {
+                    float: right;
+                }
+
+        @media screen and (max-width: 600px) {
+            ul.topnav li.right,
+            ul.topnav li {
+                float: none;
+            }
+        }
+    </style>
+
+</head>
+<body ng-app="dailyApp" ng-controller="dailyCtrl">
+    <ul class="topnav">
+        <li><a href="http://localhost:50544/home.html"><b>Home</b></a></li>
+        <li><a class="active" href="http://localhost:50544/dailyscheduler.html"><b>Schedule</b></a></li>
+        <li><a href="http://localhost:50544/fullcalendar.html"><b>Appointments</b></a></li>
+        <li><a href="#contact"><b>Contact</b></a></li>
+    </ul>
+
+
+    <div class="jumbotron text-center">
+        <h1>Doc Patient Managment</h1>
+        <h3><b>Dr. Firts Name Last Name, Specialization.</b></h3>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    </div>
+    <br />
+
+    <form ng-submit="submit()">
+        <p>
+            <label for="dt">Date: </label>
+            <input name="dt" type="date" ng-model="date"  required/>
+            <!--<input type="submit" />-->
+        </p>
+        <br />
+        <p>
+            <lable><b>Start Time:</b></lable>
+            <select ng-model="dropdown1">
+                <option value="4">4:00AM</option>
+                <option value="5">5:00AM</option>
+                <option value="6">6:00AM</option>
+                <option value="7">7:00AM</option>
+                <option value="8" selected>8:00AM</option>
+                <option value="9">9:00AM</option>
+                <option value="10">10:00AM</option>
+                <option value="11">11:00AM</option>
+                <option value="12">12:00PM</option>
+                <option value="13">1:00PM</option>
+                <option value="14">2:00PM</option>
+                <option value="15">3:00PM</option>
+                <option value="16">4:00PM</option>
+                <option value="17">5:00PM</option>
+                <option value="18">6:00PM</option>
+                <option value="19">7:00PM</option>
+                <option value="20">8:00PM</option>
+                <option value="21">9:00PM</option>
+            </select>
+        </p>
+
+        <br />
+        <p>
+            <lable><b>Lunch Time:</b></lable>
+            <select ng-model="dropdown2">
+                <option value="4">4:00AM</option>
+                <option value="5">5:00AM</option>
+                <option value="6">6:00AM</option>
+                <option value="7">7:00AM</option>
+                <option value="8">8:00AM</option>
+                <option value="9">9:00AM</option>
+                <option value="10">10:00AM</option>
+                <option value="11">11:00AM</option>
+                <option value="12" selected>12:00PM</option>
+                <option value="13">1:00PM</option>
+                <option value="14">2:00PM</option>
+                <option value="15">3:00PM</option>
+                <option value="16">4:00PM</option>
+                <option value="17">5:00PM</option>
+                <option value="18">6:00PM</option>
+                <option value="19">7:00PM</option>
+                <option value="20">8:00PM</option>
+                <option value="21">9:00PM</option>
+            </select>
+        </p>
+        <br />
+        <p>
+            <lable><b>Lunch End Time:</b></lable>
+            <select ng-model="dropdown3">
+                <option value="4">4:00AM</option>
+                <option value="5">5:00AM</option>
+                <option value="6">6:00AM</option>
+                <option value="7">7:00AM</option>
+                <option value="8">8:00AM</option>
+                <option value="9">9:00AM</option>
+                <option value="10">10:00AM</option>
+                <option value="11">11:00AM</option>
+                <option value="12">12:00PM</option>
+                <option value="13" selected>1:00PM</option>
+                <option value="14">2:00PM</option>
+                <option value="15">3:00PM</option>
+                <option value="16">4:00PM</option>
+                <option value="17">5:00PM</option>
+                <option value="18">6:00PM</option>
+                <option value="19">7:00PM</option>
+                <option value="20">8:00PM</option>
+                <option value="21">9:00PM</option>
+            </select>
+        </p>
+        <br />
+        <p>
+            <lable><b>End Time:</b></lable>
+            <select ng-model="dropdown4">
+                <option value="4">4:00AM</option>
+                <option value="5">5:00AM</option>
+                <option value="6">6:00AM</option>
+                <option value="7">7:00AM</option>
+                <option value="8">8:00AM</option>
+                <option value="9">9:00AM</option>
+                <option value="10">10:00AM</option>
+                <option value="11">11:00AM</option>
+                <option value="12">12:00PM</option>
+                <option value="13">1:00PM</option>
+                <option value="14">2:00PM</option>
+                <option value="15">3:00PM</option>
+                <option value="16">4:00PM</option>
+                <option value="17" selected>5:00PM</option>
+                <option value="18">6:00PM</option>
+                <option value="19">7:00PM</option>
+                <option value="20">8:00PM</option>
+                <option value="21">9:00PM</option>
+            </select>
+        </p>
+        <br />
+        <p>
+            <button type="submit" class="btn btn-warning">Send</button>
+        </p>
+    </form>
+
+    <script>
+
+        var application = angular.module('dailyApp', []);
+        application.controller('dailyCtrl', function ($scope, $http, $window) {
+
+            $scope.submit = function () {
+                console.log('date: ' + $scope.date
+                    + ' start time: ' + $scope.dropdown1
+                    + ' lunch time: ' + $scope.dropdown2
+                    + ' lunch end time: ' + $scope.dropdown3
+                    + ' end time: ' + $scope.dropdown4);
+
+                alert('Your schedule has been submitted');
+
+                $window.location.pathname = "home.html";
+            };
+        });
+    </script>
+</body>
+</html>
+

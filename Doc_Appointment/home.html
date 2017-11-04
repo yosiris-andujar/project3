@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Doc Appointment Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .jumbotron {
+            background-color: #628395;
+            color: #ffffff;
+        }
+
+        img {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+
+        body {
+            margin: 0;
+        }
+
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #ffad33;
+        }
+
+            ul.topnav li {
+                float: left;
+            }
+
+                ul.topnav li a {
+                    display: block;
+                    color: black;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+
+                    ul.topnav li a:hover:not(.active) {
+                        background-color: #ffffff;
+                    }
+
+                    ul.topnav li a.active {
+                        background-color: #a4a1a1;
+                    }
+
+                ul.topnav li.right {
+                    float: right;
+                }
+
+        @media screen and (max-width: 600px) {
+            ul.topnav li.right,
+            ul.topnav li {
+                float: none;
+            }
+        }
+    </style>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="534347182229-hlj7fh7ik8pe3ls8os20f7ohiu5qcr93.apps.googleusercontent.com">
+
+</head>
+<body>
+    <ul class="topnav">
+        <li><a class="active" href="http://localhost:50544/home.html"><b>Home</b></a></li>
+        <li><a href="http://localhost:50544/dailyscheduler.html"><b>Schedule</b></a></li>
+        <li><a href="http://localhost:50544/fullcalendar.html"><b>Appointments</b></a></li>
+        <li><a href="#contact"><b>Contact</b></a></li>
+    </ul>
+
+
+    <div class="jumbotron text-center">
+        <h1>Doc Patient Managment</h1>
+        <h3><b>Dr. Firts Name Last Name, Specialization.</b></h3>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    </div>
+
+    <div>
+        <img src="1462990904049.png" height="100" width="100" />
+    </div>
+
+
+</body>
+</html>
