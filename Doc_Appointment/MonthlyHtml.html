@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/jquery-3.2.1.js"></script>
+    <!--<script src="Scripts/jquery-3.2.1.js"></script>-->
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/angular.js"></script>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <title></title>
 </head>
-<body ng-app="myApp" ng-controller="myController">
+<body ng-app="monthlyApp" ng-controller="monthlyCtrl">
 
     <form ng-submit="submit()">
         <table style="font-size:medium" class="table table-bordered">
@@ -15,7 +17,7 @@
                 <tr style="background-color:#ffad33">
                     <th>
                         <label for="dt">Month: </label>
-                        <input name="dt" type="month" />
+                        <input id="monthfield" ng-model="month" name="dt" type="month" />
                     </th>
                     <th>Start Time</th>
                     <th>Break Start Time</th>
@@ -28,91 +30,91 @@
                 <tr style="background-color:#eafcfb">
                     <th scope="row">Sunday</th>
                     <td>
-                        <select id="firstselect">
-                            <option value="4">4:00am</option>
-                            <option value="5">5:00am</option>
-                            <option value="6">6:00am</option>
-                            <option value="7">7:00am</option>
-                            <option value="8" selected>8:00am</option>
-                            <option value="9">9:00am</option>
-                            <option value="10">10:00am</option>
-                            <option value="11">11:00am</option>
-                            <option value="12">12:00pm</option>
-                            <option value="13">1:00pm</option>
-                            <option value="14">2:00pm</option>
-                            <option value="15">3:00pm</option>
-                            <option value="16">4:00pm</option>
-                            <option value="17">5:00pm</option>
-                            <option value="18">6:00pm</option>
-                            <option value="19">7:00pm</option>
-                            <option value="20">8:00pm</option>
-                            <option value="21">9:00pm</option>
+                        <select type="text" ng-model="dropdown1" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option selected>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown2" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option selected>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown3" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option selected>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown4" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
@@ -123,91 +125,91 @@
                 <tr style="background-color:#b7d5d4">
                     <th scope="row">Monday</th>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option selected>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown5" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option selected>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown6" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option selected>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown7" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option selected>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown8" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
@@ -218,91 +220,91 @@
                 <tr style="background-color:#eafcfb">
                     <th scope="row">Tuesday</th>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option selected>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown9" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option selected>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown10" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option selected>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown11" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option selected>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown12" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
@@ -313,91 +315,91 @@
                 <tr style="background-color:#b7d5d4">
                     <th scope="row">Wednesday</th>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option selected>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown13" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option selected>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown14" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option selected>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown15" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option selected>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown16" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
@@ -408,91 +410,91 @@
                 <tr style="background-color:#eafcfb">
                     <th scope="row">Thursday</th>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option selected>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown17" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option selected>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown18" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option selected>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown19" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option selected>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown20" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
@@ -503,91 +505,91 @@
                 <tr style="background-color:#b7d5d4">
                     <th scope="row">Friday</th>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option selected>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown21" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option selected>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown22" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option selected>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown23" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option selected>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown24" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
@@ -598,91 +600,91 @@
                 <tr style="background-color:#eafcfb">
                     <th scope="row">Saturday</th>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option selected>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown25" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown26" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown27" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
-                        <select>
-                            <option>4:00am</option>
-                            <option>5:00am</option>
-                            <option>6:00am</option>
-                            <option>7:00am</option>
-                            <option>8:00am</option>
-                            <option>9:00am</option>
-                            <option>10:00am</option>
-                            <option>11:00am</option>
-                            <option>12:00pm</option>
-                            <option>1:00pm</option>
-                            <option>2:00pm</option>
-                            <option>3:00pm</option>
-                            <option>4:00pm</option>
-                            <option>5:00pm</option>
-                            <option>6:00pm</option>
-                            <option>7:00pm</option>
-                            <option>8:00pm</option>
-                            <option>9:00pm</option>
+                        <select type="text" ng-model="dropdown28" name="dropdown1">
+                            <option value="a">4:00AM</option>
+                            <option value="b">5:00AM</option>
+                            <option value="c">6:00AM</option>
+                            <option value="d">7:00AM</option>
+                            <option value="e">8:00AM</option>
+                            <option value="f">9:00AM</option>
+                            <option value="g">10:00AM</option>
+                            <option value="h">11:00AM</option>
+                            <option value="i">12:00PM</option>
+                            <option value="j">1:00PM</option>
+                            <option value="k">2:00PM</option>
+                            <option value="l">3:00PM</option>
+                            <option value="m">4:00PM</option>
+                            <option value="n">5:00PM</option>
+                            <option value="o">6:00PM</option>
+                            <option value="p">7:00PM</option>
+                            <option value="q">8:00PM</option>
+                            <option value="r">9:00PM</option>
                         </select>
                     </td>
                     <td>
@@ -693,7 +695,46 @@
             </tbody>
         </table>
 
-        <button type="submit" style="float:right;margin-right:10%" class="btn btn-warning">Send</button>
+        <button type="submit" class="btn btn-warning" ng-disabled="(month==null || dropdown1 == null || dropdown2 == null || dropdown3 == null || dropdown4 == null || dropdown1 >= dropdown2 || dropdown2 >= dropdown3 || dropdown3 >= dropdown4) || (dropdown5 == null || dropdown6 == null || dropdown7 == null || dropdown8 == null || dropdown5 >= dropdown6 || dropdown6 >= dropdown7 || dropdown7 >= dropdown8) || (dropdown9 == null || dropdown10 == null || dropdown11 == null || dropdown12 == null || dropdown9 >= dropdown10 || dropdown10 >= dropdown11 || dropdown11 >= dropdown12) || (dropdown13 == null || dropdown14 == null || dropdown15 == null || dropdown16 == null || dropdown13 >= dropdown14 || dropdown14 >= dropdown15 || dropdown15 >= dropdown16) || (dropdown17 == null || dropdown18 == null || dropdown19 == null || dropdown20 == null || dropdown17 >= dropdown18 || dropdown18 >= dropdown19 || dropdown19 >= dropdown20) || (dropdown21 == null || dropdown22 == null || dropdown23 == null || dropdown24 == null || dropdown21 >= dropdown22 || dropdown22 >= dropdown23 || dropdown23 >= dropdown24) || (dropdown25 == null || dropdown26 == null || dropdown27 == null || dropdown28 == null || dropdown25 >= dropdown26 || dropdown26 >= dropdown27 || dropdown27 >= dropdown28)">Send</button>
     </form>
+    <script>
+        var monthlyApp = angular.module('monthlyApp', []);
+        monthlyApp.controller('monthlyCtrl', function ($scope) {
+
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+
+            today = yyyy + '-' + mm + '-' + dd;
+            month = yyyy + '-' + mm;
+            document.getElementById("monthfield").min = month;
+
+            $scope.submit = function () {
+                //console.log($scope.month);
+                //console.log($scope.select1);
+                //console.log($scope.select2);
+                //console.log($scope.select3);
+                //console.log($scope.select4);
+                if (!($scope.select1 < $scope.select2)
+                    || !($scope.select2 < $scope.select3)
+                    || !($scope.select3 < $scope.select4)) {
+                    console.log("Improper hour range");
+                    //console.log(!($scope.select1 < $scope.select2));
+                    //console.log($scope.select2 < $scope.select3);
+                    //console.log($scope.select3 < $scope.select4);
+                }
+                else console.log("Good range")
+
+            };
+
+        });
+    </script>
 </body>
 </html>
